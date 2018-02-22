@@ -38,6 +38,14 @@
     
     [self.view addSubview:self.tableView];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(clickOrScrollDidFinshNotification:) name:@"DDDisplayViewClickOrScrollDidFinshNotification" object:nil];
+}
+
+- (void)clickOrScrollDidFinshNotification:(NSNotification *)noti
+{
+    if (self == noti.object) {
+        NSLog(@"%@",self.title);
+    }
 }
 
 - (void)didReceiveMemoryWarning {

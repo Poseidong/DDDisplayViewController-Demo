@@ -18,6 +18,8 @@
 #define DDScreenW [UIScreen mainScreen].bounds.size.width
 #define DDScreenH [UIScreen mainScreen].bounds.size.height
 
+static NSString * const DDDisplayViewClickOrScrollDidFinshNotification = @"DDDisplayViewClickOrScrollDidFinshNotification";
+
 static NSString * const CELLID = @"cell";
 //标题高度
 static CGFloat const DDTitleHeight = 44;

@@ -94,6 +94,10 @@ static NSInteger const baseTag = 10000;
 - (void)titleClikced:(UITapGestureRecognizer *)tap
 {
     NSInteger index = tap.view.tag - baseTag;
+    //通知
+    UIViewController *vc = [self.childViewControllers objectAtIndex:index];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDDisplayViewClickOrScrollDidFinshNotification object:vc];
+
     if (index == self.selectIndex) return; //点击当前显示的标题 不执行操作  或者在次添加代理执行方法
 
     self.isClickTitle = YES;
@@ -318,6 +322,9 @@ static NSInteger const baseTag = 10000;
         //下标移动动画
         [self underLineMoveAnimation:YES];
     }
+    //通知
+    UIViewController *vc = [self.childViewControllers objectAtIndex:self.selectIndex];
+    [[NSNotificationCenter defaultCenter] postNotificationName:DDDisplayViewClickOrScrollDidFinshNotification object:vc];
 }
 
 #pragma mark - UICollectionViewDelegate, UICollectionViewDataSource

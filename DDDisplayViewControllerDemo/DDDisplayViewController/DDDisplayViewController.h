@@ -5,6 +5,19 @@
 //  Created by Poseidon on 2018/2/9.
 //  Copyright © 2018年 Poseidon. All rights reserved.
 //
+/*
+ **************用法*****************
+ 
+ 一、自定义DDDisplayViewController
+ 二、添加所有子控制器，保存标题在子控制器中
+ 三、查看DDDisplayViewController头文件，找需要的效果设置
+ 四、标题被点击或者内容滚动完成，会发出这个通知【"DDDisplayViewClickOrScrollDidFinshNotification"】，监听这个通知，可以做自己想要做的事情，比如加载数据
+ 
+ 注: 展示tableView的时候，如果有UITabBarController,UINavgationController,需要自己给tableView添加额外滚动区域。
+ 
+ **************用法*****************
+ 
+ */
 
 #import <UIKit/UIKit.h>
 
