@@ -372,6 +372,11 @@ static NSInteger const baseTag = 10000;
     }
 }
 
+- (void)refreshAllSubViews
+{
+    [self.view setNeedsLayout];
+}
+
 #pragma mark - initUI
 - (void)initUI
 {
